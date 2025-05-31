@@ -2,6 +2,8 @@ package Managment.WareHouse.Entity;
 
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.List;
 
@@ -20,6 +22,7 @@ public class Products {
 
     @ManyToOne
     @JoinColumn(name = "warehouse_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private WareHouse warehouse;
 
     public Products() {

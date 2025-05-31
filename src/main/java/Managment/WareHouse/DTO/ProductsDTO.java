@@ -6,7 +6,7 @@ import jakarta.persistence.ManyToOne;
 
 public class ProductsDTO {
 
-    private Integer product_id;
+    private Long id;
 
     private String name;
     private String description;
@@ -15,12 +15,12 @@ public class ProductsDTO {
 
     private Long warehouse_id;
 
-    public Integer getProduct_id() {
-        return product_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setProduct_id(Integer product_id) {
-        this.product_id = product_id;
+    public void setId(Long product_id) {
+        this.id = product_id;
     }
 
     public String getName() {

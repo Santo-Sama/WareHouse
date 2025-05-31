@@ -2,6 +2,8 @@ package Managment.WareHouse.Entity;
 
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 
 @Entity
@@ -17,10 +19,12 @@ public class SaleItem {
 
     @ManyToOne
     @JoinColumn(name = "product_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Products product;
 
     @ManyToOne
     @JoinColumn(name = "sale_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Sales sale;
 
     public SaleItem() {

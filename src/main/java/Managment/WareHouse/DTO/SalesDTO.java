@@ -19,11 +19,21 @@ public class SalesDTO {
 
     private Long customer_id;
 
+    private List<SaleItemDTO> saleItemsDTO;
+
     public SalesDTO() {
     }
 
     public Integer getId() {
         return id;
+    }
+
+    public List<SaleItemDTO> getSaleItemsDTO() {
+        return saleItemsDTO;
+    }
+
+    public void setSaleItemsDTO(List<SaleItemDTO> saleItemsDTO) {
+        this.saleItemsDTO = saleItemsDTO;
     }
 
     public void setId(Integer id) {

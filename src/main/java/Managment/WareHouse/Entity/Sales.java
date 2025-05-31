@@ -3,6 +3,8 @@ package Managment.WareHouse.Entity;
 
 import Managment.WareHouse.Enum.ShipmentStatus;
 import jakarta.persistence.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -22,6 +24,7 @@ public class Sales {
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Customers customer;
 
     public Sales() {
