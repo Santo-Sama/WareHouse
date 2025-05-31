@@ -23,8 +23,8 @@ public class WareHouse {
         return id;
     }
 
-    public void setId(Long warehouse_id) {
-        this.id = warehouse_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getLocation() {

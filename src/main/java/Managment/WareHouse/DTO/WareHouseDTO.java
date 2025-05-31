@@ -2,19 +2,19 @@ package Managment.WareHouse.DTO;
 
 public class WareHouseDTO {
 
-    private Integer warehouse_id;
+    private Long id;
     private String location;
     private String name;
 
     public WareHouseDTO() {
     }
 
-    public Integer getWarehouse_id() {
-        return warehouse_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setWarehouse_id(Integer warehouse_id) {
-        this.warehouse_id = warehouse_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getLocation() {
