@@ -33,12 +33,21 @@ public class WareHouseService {
     }
 
     @Transactional
-    public void deleteWareHouse(Long id) {
-        wareHouseRepository.deleteById(id);
+    public ResponseEntity<String> deleteWareHouse(Long id) {
+        if (wareHouseRepository.existsById(id)) {
+            wareHouseRepository.deleteById(id);
+            return ResponseEntity.ok().body("WareHouse deleted successfully"); }
+        else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
+
+
     public List<WareHouseDTO> getAllWareHouse() {
-        return wareHouseRepository.findAll().stream().map(wareHouse -> modelMapper.map(wareHouse, WareHouseDTO.class)).toList();} //
+        return wareHouseRepository.findAll().stream()
+                .map(wareHouse -> modelMapper.map(wareHouse, WareHouseDTO.class)).toList();
+    }
 
     // WareHouseDTO
     public ResponseEntity<WareHouseDTO> getWareHouse(Long id) {

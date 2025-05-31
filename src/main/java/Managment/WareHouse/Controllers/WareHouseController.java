@@ -32,7 +32,7 @@ public class WareHouseController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteWareHouse(@PathVariable("id") Long id) {
-        wareHouseService.deleteWareHouse(id);
+    public ResponseEntity<String> deleteWareHouse(@PathVariable("id") Long id) {
+       return wareHouseService.deleteWareHouse(id);
     }
 }
